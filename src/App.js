@@ -5,7 +5,6 @@ import ProfileSidebarMobile from "./components/ProfileSidebarMobile";
 import MobileChat from "./components/MobileChat";
 
 const App = () => {
-  const [isChatOpen, setIsChatOpen] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
 
   // Detect mobile or desktop view
