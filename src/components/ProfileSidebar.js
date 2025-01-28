@@ -10,7 +10,7 @@ import {
 const ProfileIntro = () => {
   return (
     <div className="h-screen w-3/5 flex flex-col justify-center items-start pl-10 bg-white">
-      <div className="flex flex-col items-start space-y-10">
+      <div className="flex items-center space-x-4 sm:space-x-2 overflow-visible">
         <img
           src="profile.png"
           alt="Profile"

@@ -9,7 +9,7 @@ import {
 
 const ProfileSidebarMobile = () => {
   return (
-    <div className="h-screen w-full flex flex-col items-center justify-center px-4 bg-white text-center">
+    <div className="h-screen w-full flex flex-col items-center justify-center px-4 pt-40 bg-white text-center">
       {/* Profile Image and Heading */}
       <div className="flex flex-col items-center space-y-6">
         <img

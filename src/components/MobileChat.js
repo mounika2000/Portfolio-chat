@@ -43,20 +43,46 @@ const MobileChat = () => {
 
   // Predefined responses for quick links
   const quickResponses = {
-    "Why should I hire Mounika?":
-      `Mounika is a highly skilled full-stack developer with a proven track record...`,
-    "Mounika's work experience":
-      `Mounika has extensive experience in full-stack development, having contributed to impactful projects...`,
-    "Show me her projects":
-      `Here are some of Mounika's full-stack projects that showcase her ability...`,
-    "What are her skills?":
-      `Mounika’s full-stack skill set includes...`,
+    "Why should I hire Mounika?": 
+    `Mounika is a highly skilled full-stack developer with a proven track record of delivering end-to-end solutions that are scalable, efficient, and user-centric. 
+    With experience at Tesla and Adobe, she has successfully developed and optimized web applications using modern technologies like React, TypeScript, Node.js, and AWS. 
+    Her ability to seamlessly integrate frontend and backend components, coupled with a strong focus on performance optimization and cross-functional collaboration, 
+    makes her an invaluable asset to any engineering team. Her proactive approach to problem-solving and commitment to continuous learning ensure that she consistently delivers high-quality results.`,
+
+  "Work experience": 
+    `Mounika has extensive experience in full-stack development, having contributed to impactful projects at Tesla and Adobe. 
+    At Tesla, she led the end-to-end development of critical web features, improving API response times by 23% and optimizing page load speeds through efficient frontend and backend integration. 
+    At Adobe, she spearheaded the modernization of key UI components, enabling seamless transitions between legacy and modern interfaces while enhancing memory efficiency and deployment processes. 
+    Her experience spans frontend frameworks like React and backend technologies such as Node.js and Flask, making her adept at handling complex, large-scale applications.`,
+
+  "Projects": 
+    `Here are some of Mounika's full-stack projects that showcase her ability to develop scalable and responsive web applications:
+
+    \n\n• PAWSOME: Interactive Pet Wellness Web App 
+    Full-stack web application leveraging AI to provide personalized pet fitness plans with 92% accuracy.  
+    Technologies: React (frontend), Flask (backend), TypeScript, Python, MongoDB.  
+
+    \n\n• Advanced Recommendation Engine
+    Built a recommendation system that delivers personalized suggestions using collaborative filtering and distributed computing for scalability.  
+    Technologies: Python (backend), Scikit-learn, MySQL, Hadoop, Flask.  
+
+    \n\n• Local Marketplace Platform
+    Developed a responsive e-commerce web app for local businesses, increasing user engagement and community interactions.  
+    Technologies: React (frontend), Node.js (backend), Firebase, HTML, CSS.`,
+
+  "Skills?": 
+    `Mounika’s full-stack skill set includes:
+
+    \n\n• Languages: C++, JavaScript, TypeScript, Java, PHP, Python, C
+    \n\n• Frameworks/ Tools: React, React Native, Flask, Webpack, NodeJS, Angular, Android Studio, Amazon Web Services (AWS), Git,
+    Github, Docker, Jenkins, Django, Postman, Splunk, HTML, CSS
+    \n\n• Databases: MySQL, PostgreSQL, MongoDB, DynamoDB, Neo4J, Firebase`
   };
 
   const quickLinks = [
-    { id: 2, text: "Mounika's work experience", icon: "💼" },
-    { id: 3, text: "Show me her projects", icon: "💻" },
-    { id: 4, text: "What are her skills?", icon: "🎯" },
+    { id: 2, text: "Work experience", icon: "💼" },
+    { id: 3, text: "Projects", icon: "💻" },
+    { id: 4, text: "Skills?", icon: "🎯" },
   ];
 
   const scrollToBottom = () => {
@@ -173,13 +199,13 @@ const MobileChat = () => {
             <div ref={messagesEndRef} />
           </div>
           <div className="space-y-4">
-            <div className="flex flex-wrap gap-2 justify-center">
+            <div className="flex gap-2 justify-center">
               {quickLinks.map((link) => (
                 <button
                   key={link.id}
                   onClick={() => handleQuickLink(link.text)}
                   disabled={isTyping}
-                  className="px-4 py-2 rounded-full border border-gray-300 hover:border-gray-400 transition-colors text-xs"
+                  className="px-4 py-2 rounded-full border border-gray-300 hover:border-gray-400 transition-colors text-xs whitespace-nowrap"
                 >
                   {link.icon} {link.text}
                 </button>
