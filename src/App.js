@@ -1,22 +1,36 @@
-import React, { useState } from 'react';
-import PortfolioChat from './components/PortfolioChat';
-import ProfileSidebar from './components/ProfileSidebar';
-
-
+import React, { useState, useEffect } from "react";
+import PortfolioChat from "./components/PortfolioChat";
+import ProfileSidebar from "./components/ProfileSidebar";
+import ProfileSidebarMobile from "./components/ProfileSidebarMobile";
+import MobileChat from "./components/MobileChat";
 
 const App = () => {
   const [isChatOpen, setIsChatOpen] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detect mobile or desktop view
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile(); // Initial check
+    window.addEventListener("resize", checkMobile); // Listen for screen resize
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   return (
     <div className="flex h-screen">
-      <ProfileSidebar />
-      <button
-        className="fixed bottom-8 right-8 bg-blue-500 text-white px-6 py-3 rounded-full shadow-lg hover:bg-blue-600 transition-all"
-        onClick={() => setIsChatOpen(true)}
-      >
-        💬 Chat with me
-      </button>
-      {isChatOpen && <PortfolioChat onClose={() => setIsChatOpen(false)} />}
+      {/* Profile Sidebar: Always included */}
+
+      {/* Conditional Rendering for ProfileIntro */}
+      <div className="flex-1">
+        {isMobile ? (
+          <ProfileSidebarMobile />
+        ) : (
+          <ProfileSidebar />
+        )}
+      </div>
+
+      {/* Portfolio Chat: Always visible, but can be toggled */}
+      {isMobile ? <MobileChat /> : <PortfolioChat />}
     </div>
   );
 };

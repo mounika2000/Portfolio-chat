@@ -66,17 +66,17 @@ const ProfileIntro = () => {
           </p>
           <p className="text-blue-500 underline flex items-center">
           <a
-              href="https://devpost.com/software/pawsome-nk68yv"
+              href="https://github.com/sumukh-aradhya/DSP_Final"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-500 underline inline-flex items-center"
             >
-              Recommendation System <FaExternalLinkAlt className="ml-2" />
+              Recommendation Engine <FaExternalLinkAlt className="ml-2" />
             </a>
           </p>
           <p className="text-blue-500 underline flex items-center">
           <a
-              href="https://devpost.com/software/pawsome-nk68yv"
+              href="https://github.com/mounika2000/Local_MarketPlace-React-JS"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-500 underline inline-flex items-center"
